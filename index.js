@@ -13,10 +13,6 @@ dotenv.config({});
 
 const PORT = process.env.PORT || 3000;
 
-const __dirname = path.resolve();
-
-
-
 app.get('/', (_, res) => {
     return res.status(200).json({ 
           message: 'comming from backend',  
@@ -28,8 +24,6 @@ app.get('/', (_, res) => {
 app.use(express.json());
 app.use(cookieParser());
 app.use(urlencoded({ extended: true }));
-
-app.use(express.static(path.join(__dirname, "frontend/dist")));
 
 const corsOptions = {
     origin: 'http://localhost:5173',
