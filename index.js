@@ -26,7 +26,7 @@ app.use(cookieParser());
 app.use(urlencoded({ extended: true }));
 
 const corsOptions = {
-    origin: 'https://insta-clone-6vys.vercel.app',
+    origin: '*',
     credentials: true
 }
 app.use(cors(corsOptions));
