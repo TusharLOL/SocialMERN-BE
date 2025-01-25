@@ -127,6 +127,9 @@ export const editProfile = async (req, res) => {
             const fileUri = getDataUri(profilePicture)
             cloudResponse = await cloudinary.uploader.upload(fileUri);
         }
+        if(gender === undefined){
+            gender = "";
+        }
 
         const user = await User.findById(userId).select('-password');
         if(!user){

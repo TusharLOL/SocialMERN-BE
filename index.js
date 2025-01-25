@@ -7,7 +7,6 @@ import userRoute from './routes/user.route.js'
 import postRoute from './routes/post.route.js'
 import messageRoute from './routes/message.route.js'
 import { app,server } from './socket/socket.js';
-import path from "path";
 
 dotenv.config({});
 
@@ -26,7 +25,7 @@ app.use(cookieParser());
 app.use(urlencoded({ extended: true }));
 
 const corsOptions = {
-    origin: 'https://insta-clone-lime.vercel.app',
+    origin: ['https://insta-clone-lime.vercel.app','http://localhost:5173'],
     credentials: true
 }
 app.use(cors(corsOptions));
